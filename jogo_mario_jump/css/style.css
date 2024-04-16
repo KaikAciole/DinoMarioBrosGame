@@ -1,0 +1,131 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.game-board {
+    width: 100%;
+    height: 100%;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.pipe {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    bottom: 0;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 600ms ease-out;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+.cloudsLonge {
+    position: absolute;
+    width: 150px;
+    top: 80%;
+    animation: clouds-animation 12s infinite linear;
+}
+
+.cloudsMeio {
+    position: absolute;
+    width: 350px;
+    top: 45%;
+    animation: clouds-animation 8s infinite linear;
+}
+
+.cloudsPerto {
+    position: absolute;
+    width: 550px;
+    top: 5%;
+    animation: clouds-animation 5s infinite linear;
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.pontos {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3vw;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.game-over {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    display: none;
+}
+
+.game-over>img {
+    position: absolute;
+    bottom: 50vh;
+    width: 60vw;
+    left: calc(50% - 30vw);
+}
+
+.game-over>span {
+    position: absolute;
+    top: 55vh;
+    width: 60vw;
+    left: calc(50% - 30vw);
+    color: #fff;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+}
